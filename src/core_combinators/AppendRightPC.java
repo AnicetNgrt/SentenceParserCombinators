@@ -8,14 +8,14 @@ import core.ParserCombinator;
 import java.util.List;
 import java.util.Map;
 
-public class AppendRightPC<O, PA extends Parser<List<O>>, PB extends Parser<O>> extends ParserCombinator<List<O>, O, PA, PB, List<O>> {
+public class AppendRightPC<O> extends ParserCombinator<List<O>, O, List<O>> {
     public AppendRightPC(Parser<List<O>> parserA, Parser<O> parserB) {
         super(parserA, parserB);
     }
 
     @Override
     public ParseResult<List<O>> parse(String input) throws ParseException {
-        PairPC<List<O>, O, PA, PB> pairPc = new PairPC<>(parserA, parserB);
+        PairPC<List<O>, O> pairPc = new PairPC<>(parserA, parserB);
         ParseResult<Map.Entry<List<O>, O>> prNotJoined = pairPc.parse(input);
         List<O> poA = prNotJoined.output.getKey();
         O poB = prNotJoined.output.getValue();

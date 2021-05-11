@@ -8,7 +8,7 @@ import core.ParserWrapper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ZeroOrMoreWP<O, P extends Parser<O>> extends ParserWrapper<O, P, List<O>> {
+public class ZeroOrMoreWP<O> extends ParserWrapper<O, List<O>> {
     public ZeroOrMoreWP(Parser<O> parser) {
         super(parser);
     }

@@ -8,7 +8,7 @@ import core.ParserWrapper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MinOrMoreWP<O, P extends Parser<O>> extends ParserWrapper<O, P, List<O>> {
+public class MinOrMoreWP<O> extends ParserWrapper<O, List<O>> {
     public final int min;
 
     public MinOrMoreWP(Parser<O> parser, int min) {

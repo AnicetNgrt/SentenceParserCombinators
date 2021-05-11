@@ -8,7 +8,7 @@ import core.ParserCombinator;
 import java.util.AbstractMap;
 import java.util.Map;
 
-public class PairPC<OA, OB, PA extends Parser<OA>, PB extends Parser<OB>> extends ParserCombinator<OA, OB, PA, PB, Map.Entry<OA, OB>> {
+public class PairPC<OA, OB> extends ParserCombinator<OA, OB, Map.Entry<OA, OB>> {
     public PairPC(Parser<OA> parserA, Parser<OB> parserB) {
         super(parserA, parserB);
     }

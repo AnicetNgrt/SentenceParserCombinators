@@ -1,6 +1,6 @@
 package core;
 
-public abstract class ParserWrapper<O, P extends Parser<O>, R> implements Parser<R> {
+public abstract class ParserWrapper<O, R> implements Parser<R> {
     public final Parser<O> parser;
 
     public ParserWrapper(Parser<O> parser) {

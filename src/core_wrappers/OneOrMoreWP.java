@@ -7,7 +7,7 @@ import core.Parser;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OneOrMoreWP<O, P extends Parser<O>> extends ZeroOrMoreWP<O, P> {
+public class OneOrMoreWP<O> extends ZeroOrMoreWP<O> {
     public OneOrMoreWP(Parser<O> parser) {
         super(parser);
     }

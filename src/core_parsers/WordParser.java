@@ -11,7 +11,7 @@ public class WordParser implements Parser<String> {
     @Override
     public ParseResult<String> parse(String input) throws ParseException {
         Parser<Character> nscParser = new NonWhiteSpaceParser();
-        Parser<List<Character>> wordParser = new OneOrMoreWP<Character, NonWhiteSpaceParser>(nscParser);
+        OneOrMoreWP<Character> wordParser = new OneOrMoreWP<>(nscParser);
         ParseResult<List<Character>> pr = wordParser.parse(input);
         StringBuilder output = new StringBuilder();
         for (char c: pr.output) output.append(c);
